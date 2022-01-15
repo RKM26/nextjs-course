@@ -5,15 +5,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-husky": "prettier --check ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A ."
+    }
   },
   "dependencies": {
+    "husky": "^7.0.4",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.8"
+    "eslint-config-next": "12.0.8",
+    "prettier": "^2.5.1"
   }
 }
