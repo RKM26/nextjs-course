@@ -6,12 +6,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-husky": "prettier --check ."
+    "lint-husky": "prettier --check .",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "prettier --write . && git add -A ."
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*": "prettier --write"
   },
   "dependencies": {
     "husky": "^7.0.4",
